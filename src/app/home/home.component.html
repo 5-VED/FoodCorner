@@ -1,0 +1,31 @@
+<app-search></app-search>
+<ul>
+  <li *ngFor="let food of foodList">
+    <a>
+      <img class="height" src={{food.imageUrl}} alt="images">
+      <div class="content">
+        <div class="name">
+          {{food.name}}
+        </div>
+        <span class="favourite">&#9829;</span>
+        <ngb-rating [max]="5" [readonly]="true">
+          <!-- <ng-template let-fill="fill">
+            <span [class.painted]="fill===100" [class.notpainted]="fill===0"></span>
+          </ng-template> -->
+        </ngb-rating>
+        <div class="product-items-footer">
+          <div class="origin">
+            <span *ngFor="let origin of food.origins">{{origin}}</span>
+          </div>
+        </div>
+        <div class="cook-time">
+          <span>&#9202;</span>
+          {{food.cookTime}}
+        </div>
+        <div class="currency">
+        $ {{food.price}}
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
