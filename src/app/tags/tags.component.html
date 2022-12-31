@@ -1,1 +1,9 @@
-<p>tags works!</p>
+<div>
+  <div class="menu" >
+    <ul *ngIf="tagList">
+      <li>
+        <a class="a" *ngFor="let tag of tagList" routerLink="/tags/{{tag.name}}">{{tag.name}} ({{tag.count}})</a>
+      </li>
+    </ul>
+  </div>
+</div>

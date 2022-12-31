@@ -1,11 +1,33 @@
 import { Injectable } from '@angular/core';
 import { Food } from 'src/app/shared/models/food.model';
+import { Tags } from 'src/app/shared/models/tags';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FoodService {
   constructor() {}
+
+  getFoodByTag(tag: string): Food[] {
+    if (tag === 'All') {
+      return this.getAllFood();
+    } else {
+      return this.getAllFood().filter((food) => food['tags']?.includes(tag));
+    }
+  }
+
+  getAllTags(): Tags[] {
+    return [
+      { name: 'All', count: 14 },
+      { name: 'FastFood', count: 4 },
+      { name: 'Pizza', count: 2 },
+      { name: 'Lunch', count: 3 },
+      { name: 'SlowFood', count: 2 },
+      { name: 'Hamburger', count: 1 },
+      { name: 'Fry', count: 1 },
+      { name: 'Soup', count: 1 },
+    ];
+  }
 
   getAllFood(): Food[] {
     return [
@@ -15,7 +37,7 @@ export class FoodService {
         cookTime: '10-20',
         price: 10,
         favourite: false,
-        origins:  ['italy'],
+        origins: ['italy'],
         star: 4.5,
         imageUrl: '/assets/images/foods/food-1.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
@@ -44,7 +66,7 @@ export class FoodService {
       },
       {
         id: 4,
-        name: 'Fried Potatoes',
+        name: 'Fryed Potatoes',
         price: 2,
         cookTime: '15-20',
         favourite: true,
@@ -99,4 +121,5 @@ export class FoodService {
       },
     ];
   }
+
 }

@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit {
               .toLowerCase()
               .includes(params['searchItem'].toLowerCase())
           );
+      } else if (params['tag']) {
+        this.foodList = this.fs.getFoodByTag(params['tag']);
       } else {
         this.foodList = this.fs.getAllFood();
       }

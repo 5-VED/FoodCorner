@@ -1,0 +1,16 @@
+div ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+div a{
+    font-weight: 600;
+    margin: 5px;
+    border-radius: 25px;
+    background-color: lightgrey;
+    cursor: pointer;
+    padding: 10px;
+}
