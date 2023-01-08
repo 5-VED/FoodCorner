@@ -1,9 +1,9 @@
-<div>
-  <div class="menu" >
-    <ul *ngIf="tagList">
-      <li>
-        <a class="a" *ngFor="let tag of tagList" routerLink="/tags/{{tag.name}}">{{tag.name}} ({{tag.count}})</a>
-      </li>
-    </ul>
-  </div>
+<div *ngIf="tagList">
+  <a class="a" *ngFor="let tag of tagList" routerLink="/tags/{{tag.name}}">{{tag.name}} ({{tag.count}})</a>
+</div>
+
+
+<div *ngIf="foodPageTags">
+  <a class="a" *ngFor="let tagname of foodPageTags" routerLink="/tags/{{tagname}}">{{tagname.name}}
+    ({{tagname.count}})</a>
 </div>

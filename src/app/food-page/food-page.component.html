@@ -1,0 +1,40 @@
+<div class="container">
+  <img [src]="food.imageUrl" [alt]="food.name">
+</div>
+<div class="details">
+  <div class="header">
+    <span class="name">
+      {{food.name}}
+    </span>
+
+    <span class="favourite"></span>
+  </div>
+  <div class="star">
+    <ngb-rating [max]="5" [readonly]="true">
+      <!-- <ng-template let-fill="fill">
+        <span [class.painted]="fill===100" [class.notpainted]="fill===0"></span>
+      </ng-template> -->
+    </ngb-rating>
+  </div>
+
+  <div class="origin">
+    <span *ngFor="let origin of food.origins">
+      {{origin}}
+    </span>
+  </div>
+
+  <div class="tags">
+    <app-tags [foodPageTags]="food.tags"></app-tags>
+  </div>
+
+  <div class="cook-time">
+    <span>Time to cook <strong>{{food.cookTime}}</strong> Minutes</span>
+  </div>
+
+  <div class="price">
+    <span> $ {{food.price}}</span>
+  </div>
+
+  <button>Add to Cart</button>
+
+</div>

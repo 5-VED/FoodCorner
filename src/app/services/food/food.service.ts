@@ -8,6 +8,10 @@ import { Tags } from 'src/app/shared/models/tags';
 export class FoodService {
   constructor() {}
 
+  getFoodById(id: number):Food {
+    return this.getAllFood().find((food) => food.id == id)! ;
+  }
+
   getFoodByTag(tag: string): Food[] {
     if (tag === 'All') {
       return this.getAllFood();
@@ -121,5 +125,4 @@ export class FoodService {
       },
     ];
   }
-
 }
