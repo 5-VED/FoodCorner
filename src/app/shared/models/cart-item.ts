@@ -5,7 +5,7 @@ export class CartItem {
     this.food = food;
   }
 
-  food: Food;
+  food!: Food;
   quantity: number = 1;
 
   get price(): number {

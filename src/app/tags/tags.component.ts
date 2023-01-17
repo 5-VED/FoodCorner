@@ -10,12 +10,13 @@ import { Tags } from '../shared/models/tags';
   styleUrls: ['./tags.component.css'],
 })
 export class TagsComponent implements OnInit {
-  @Input() foodPageTags: any;
+  @Input() foodPageTags!: any
   tagList: Tags[] = [];
 
   constructor(private fs: FoodService, private _router: Router) {}
 
   ngOnInit(): void {
+
     if (!this.foodPageTags) this.tagList = this.fs.getAllTags();
   }
 }

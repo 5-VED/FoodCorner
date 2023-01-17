@@ -1,5 +1,5 @@
 export class Food {
-  id!: number;
+  id: number = 1;
   price!: number;
   name!: string;
   favourite: boolean = false;

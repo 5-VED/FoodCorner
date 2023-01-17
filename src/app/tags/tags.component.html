@@ -4,6 +4,6 @@
 
 
 <div *ngIf="foodPageTags">
-  <a class="a" *ngFor="let tagname of foodPageTags" routerLink="/tags/{{tagname}}">{{tagname.name}}
-    ({{tagname.count}})</a>
+  <a class="a" *ngFor="let tagname of foodPageTags" routerLink="/tags/{{tagname}}">
+    {{tagname}} </a>
 </div>
