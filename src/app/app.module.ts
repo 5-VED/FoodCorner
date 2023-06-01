@@ -11,9 +11,9 @@ import { FormsModule } from '@angular/forms';
 import { TagsComponent } from './tags/tags.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { FoodPageComponent } from './food-page/food-page.component';
-
-
-
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +24,12 @@ import { FoodPageComponent } from './food-page/food-page.component';
     TagsComponent,
     CartPageComponent,
     FoodPageComponent,
+    LoginComponent,
+    SignupComponent,
+    NotFoundComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

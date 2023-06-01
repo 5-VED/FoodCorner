@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  max-width: 97vw;
+}
+
+ul {
+  /* padding-right: */
+  display: flex;
+  flex-direction: column;
+  flex: 3 0;
+  border: 1px solid #ffbbbb;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  padding: 0;
+  border-color: blue;
+}
+
+ul li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  margin: 10px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+ul li :last-child {
+  border: none;
+}
+
+ul li img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 100rem;
+  object-fit: cover;
+}
+
+ul li div {
+  padding: 1rem;
+}
+
+ul li div:not(:first-child) {
+  flex-basis: 18%;
+}
+
+ul li select {
+  width: 4rem;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid lightcoral;
+  font-weight: 100;
+}
+
+ul.remove-button {
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  opacity: 0.7rem;
+  color: red;
+}
+
+ul.remove-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1 3;
+  height: 20rem;
+  border: 1px solid blue;
+  border-radius: 1rem;
+  padding: 0.5 rem;
+  margin: 0.5 rem;
+  border-color: blue;
+  max-width: 20vw;
+}
+
+.checkout.food-count {
+  margin-bottom: 1.5rem;
+}
+
+.checkout.food-count::before {
+  content: "Total Products:- ";
+  color: gray;
+}
+
+.checkout .totla-pricet::before {
+  content: "Total Price:- ";
+  color: gray;
+}

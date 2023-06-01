@@ -1,33 +1,85 @@
-<ul>
-  <li *ngFor="let cartItem of cartItems">
+<div class="container">
 
+  <ul class="cartItems">
+    <li *ngFor="let cartItem of foods">
+
+      <img class="img" [src]="cartItem.imageUrl" [alt]="cartItem.name">
+
+
+      <div>
+        <a routerLink="/food/{{cartItem.id}}">
+          {{cartItem.name}}
+        </a>
+      </div>
+
+      <div>
+        <select #quantitySelect>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <div>
+          ${{cartItem.price}}
+        </div>
+      </div>
+
+
+      <div>
+        <button class="remove-button">Remove From cart</button>
+      </div>
+    </li>
+  </ul>
+  <div class="checkout">
     <div>
-      <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
+      <div class="foods-count"><strong>Total Cart Items:- {{cart.item.length}} </strong> </div>
+      <div class="total-price"><strong>Total Price:- ${{cart.totalPrice}} </strong></div>
     </div>
+  </div>
+</div>
 
+
+
+
+<!-- =============================================================================== -->
+<!-- <div *ngIf="cart && cart.item.length > 0">
+  <ul>
+    <li *ngFor="let cartItem of cartItems">
+      <div>
+        <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
+      </div>
+
+      <div>
+        <a routerLink="/food/{{cartItem.food.id}}">
+          {{cartItem.food.name}}
+        </a>
+      </div>
+
+      <div>
+        <select #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+
+      <div>
+        $ {{cartItem.price}}
+      </div>
+
+      <div>
+        <button class="remove-button" (click)="removeFromCart(cartItem)">Remove From cart</button>
+      </div>
+    </li>
+  </ul>
+
+  <div class="checkout">
     <div>
-      <a routerLink="/food/{{cartItem.food.id}}">
-        {{cartItem.food.name}}
-      </a>
+      <div class="foods-count">{{cart.item.length}}</div>
+      <div class="total-price">$ {{cart.totalPrice}}</div>
     </div>
-
-    <div>
-      <select #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-    </div>
-
-    <div>
-      $ {{cartItem.price}}
-    </div>
-
-    <div>
-      <button class="remove-button" (click)="removeFromCart(cartItem)">Remove From cart</button>
-    </div>
-
-  </li>
-</ul>
+  </div>
+</div> -->
