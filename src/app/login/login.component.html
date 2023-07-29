@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="container">
+
+  <form [formGroup]="loginForm">
+    <div class="mb-3" style="width:30rem">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+        aria-describedby="emailHelp" [ngClass]="{'is-invalid':submitted && f['email'].errors}">
+
+      <div *ngIf=" submitted && f['email'].errors" class='invalid-feedback'>
+        <div *ngIf="f['email'].errors['required']">Email Is Required</div>
+        <div *ngIf="f['email'].errors['email']">Enter Valid Email</div>
+      </div>
+
+    </div>
+    <div class="mb-3" style="width:30rem">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input [ngClass]="{'is-invalid':submitted && f['password'].errors}" formControlName="psddeotd" type="password"
+        class="form-control" id="exampleInputPassword">
+
+
+
+
+      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+        <div *ngIf="f['password'].errors['required']">Password is Requird</div>
+        <div *ngIf="f['password'].errors['minlength']">Password Must be at Least 6 Characters</div>
+        <div *ngIf="f['password'].errors?.['maxlength']">Password Cannot Exceed 25 Characters</div>
+      </div>
+    </div>
+
+    <div>
+      <button (click)="onSubmit()" type="submit" class="btn btn-primary">Log in</button>
+      <button type="submit" style="    width: 8rem;
+      margin-left: 1rem;" (click)="onSignUp()" routerLink="/signup" class="btn btn-danger btn-block">
+        Create One
+      </button>
+    </div>
+  </form>
+
+</div>
